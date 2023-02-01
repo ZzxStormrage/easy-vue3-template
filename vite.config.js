@@ -1,10 +1,12 @@
 /*
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-01-31 16:09:29
+ * @LastEditTime: 2023-01-31 16:26:57
  * @FilePath: /my-vue3-app/vite.config.js
  */
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
+
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 
