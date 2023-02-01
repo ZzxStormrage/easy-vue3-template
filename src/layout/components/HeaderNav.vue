@@ -30,23 +30,22 @@ const navList = ref([
 
 </script>
 <style lang='scss' scoped>
-
 .header-nav {
-    background: rgba(0,0,0,0.8);
+  background: rgb(0 0 0 / 80%);
 
-    .nav-list {
-        max-width: 890px;
-        display: flex;
-        align-items: center;
-        height: 48px;
-        margin: 0 auto;
+  .nav-list {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 890px;
+    height: 48px;
 
-        .item {
-            font-size: 12px;
-            font-weight: 400;
-            color: #f5f5f7;
-            margin-right: 20px;
-        }
+    .item {
+      margin-right: 20px;
+      font-size: 12px;
+      color: #f5f5f7;
+      font-weight: 400;
     }
+  }
 }
 </style>
