@@ -6,7 +6,6 @@ module.exports = {
     'stylelint-config-standard-vue'
   ],
   plugins: ['stylelint-order'],
-  // 不同格式的文件指定自定义语法
   overrides: [
     {
       files: ['**/*.(scss|css|vue|html)'],
@@ -17,18 +16,12 @@ module.exports = {
       customSyntax: 'postcss-html'
     }
   ],
-  ignoreFiles: [
-    '**/*.js',
-    '**/*.jsx',
-    '**/*.tsx',
-    '**/*.ts',
-    '**/*.json',
-    '**/*.md',
-    '**/*.yaml'
-  ],
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.md', '**/*.yaml'],
   rules: {
+    'import-notation': null,
+    'block-no-empty': null,
     'no-empty-source': null,
-    'no-descending-specificity': null, // 禁止在具有较高优先级的选择器后出现被其覆盖的较低优先级的选择器
+    'no-descending-specificity': null,
     'selector-pseudo-element-no-unknown': [
       true,
       {
@@ -41,7 +34,6 @@ module.exports = {
         ignorePseudoClasses: ['deep']
       }
     ],
-    // 指定样式的排序
     'order/properties-order': [
       'position',
       'top',

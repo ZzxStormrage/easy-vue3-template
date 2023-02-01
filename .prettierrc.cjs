@@ -1,22 +1,24 @@
 /*
  * @Date: 2023-02-01 15:52:37
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-01 15:52:43
- * @FilePath: /my-vue3-app/.prettierrc.js
+ * @LastEditTime: 2023-02-01 17:43:28
+ * @FilePath: /my-vue3-app/.prettierrc.cjs
  */
 module.exports = {
-  // 一行的字符数，如果超过会进行换行，默认为80
-  printWidth: 80,
-  // 一个tab代表几个空格数，默认为80
-  tabWidth: 2,
-  // 是否使用tab进行缩进，默认为false，表示用空格进行缩减
-  useTabs: false,
-  // 字符串是否使用单引号，默认为false，使用双引号
-  singleQuote: true,
-  // 行位是否使用分号，默认为true
-  semi: false,
-  // 是否使用尾逗号，有三个可选值"<none|es5|all>"
-  trailingComma: 'none',
-  // 对象大括号直接是否有空格，默认为true，效果：{ foo: bar }
-  bracketSpacing: true
+  printWidth: 100, // 单行输出（不折行）的（最大）长度
+  tabWidth: 2, // 每个缩进级别的空格数
+  tabs: false, // 使用制表符 (tab) 缩进行而不是空格 (space)。
+  semi: false, // 是否在语句末尾打印分号
+  singleQuote: true, // 是否使用单引号
+  quoteProps: 'as-needed', // 仅在需要时在对象属性周围添加引号
+  jsxSingleQuote: false, // jsx 不使用单引号，而使用双引号
+  trailingComma: 'none', // 去除对象最末尾元素跟随的逗号
+  bracketSpacing: true, // 是否在对象属性添加空格
+  jsxBracketSameLine: true, // 将 > 多行 JSX 元素放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）,默认false,这里选择>不另起一行
+  arrowParens: 'always', // 箭头函数，只有一个参数的时候，也需要括号
+  proseWrap: 'always', // 当超出print width（上面有这个参数）时就折行
+  htmlWhitespaceSensitivity: 'ignore', // 指定 HTML 文件的全局空白区域敏感度, "ignore" - 空格被认为是不敏感的
+  vueIndentScriptAndStyle: false, // 在VUE文件中不要缩进脚本和样式标记
+  stylelintIntegration: true,
+  endOfLine: 'auto'
 }
