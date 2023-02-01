@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-01-31 16:17:06
+ * @LastEditTime: 2023-02-01 18:15:07
  * @FilePath: /my-vue3-app/README.md
 -->
 # Vue 3 + Vite
@@ -14,23 +14,25 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 
 ## 目录结构
-
-├── dist/
-└── src/
-    ├── api/                       // 接口请求目录
-    ├── assets/                    // 静态资源目录
-    ├── common/                    // 通用类库目录
-    ├── components/                // 公共组件目录
-    ├── router/                    // 路由配置目录
-    ├── store/                     // 状态管理目录
-    ├── style/                     // 通用样式目录
-    ├── utils/                     // 工具函数目录
-    ├── views/                     // 页面组件目录
-    ├── App.vue
-    ├── main.js
-    ├── auto-import.d.ts           // 自动导入VueApi文件
-├── tests/                         // 单元测试目录
-├── index.html
-├── jsconfig.json                  // JavaScript 配置文件
-├── vite.config.js                 // Vite 配置文件
-└── package.json
+  ├─ .vscode              
+  ├─ public                  
+  ├─ src                     
+  │  ├─ api                  
+  │  ├─ assets               
+  │  ├─ common               
+  │  ├─ components           
+  │  ├─ layout               
+  │  ├─ router               
+  │  ├─ store                
+  │  ├─ style                
+  │  ├─ utils                
+  │  ├─ views                
+  │  ├─ App.vue              
+  │  ├─ auto-import.d.ts     
+  │  └─ main.js              
+  ├─ README.md               
+  ├─ index.html              
+  ├─ package-lock.json       
+  ├─ package.json            
+  ├─ pnpm-lock.yaml          
+  └─ vite.config.js          

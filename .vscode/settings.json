@@ -20,4 +20,8 @@
     "vue",
     "sass"
   ],
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": false
+  },
 }
