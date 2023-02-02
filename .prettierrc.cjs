@@ -1,11 +1,11 @@
 /*
  * @Date: 2023-02-01 15:52:37
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-01 17:43:28
- * @FilePath: /my-vue3-app/.prettierrc.cjs
+ * @LastEditTime: 2023-02-02 15:12:11
+ * @FilePath: /easy-vue3-template/.prettierrc.cjs
  */
 module.exports = {
-  printWidth: 100, // 单行输出（不折行）的（最大）长度
+  printWidth: 180, // 单行输出（不折行）的（最大）长度
   tabWidth: 2, // 每个缩进级别的空格数
   tabs: false, // 使用制表符 (tab) 缩进行而不是空格 (space)。
   semi: false, // 是否在语句末尾打印分号

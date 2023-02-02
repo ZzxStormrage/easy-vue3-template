@@ -1,7 +1,7 @@
 {
   // 开启自动修复
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
+    "source.fixAll": true,
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
@@ -23,5 +23,8 @@
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.formatOnSave": false
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 }

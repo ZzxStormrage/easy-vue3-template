@@ -1,8 +1,8 @@
 /*
  * @Date: 2023-01-31 16:21:02
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-01 14:27:45
- * @FilePath: /my-vue3-app/src/router/modules/base.js
+ * @LastEditTime: 2023-02-02 15:20:56
+ * @FilePath: /easy-vue3-template/src/router/modules/home.js
  */
 import Layout from '@/layout/index.vue'
 
@@ -12,10 +12,10 @@ export default [
     component: Layout,
     children: [
       {
-        path: '/',
+        path: '',
         name: 'home',
-        component: () => import('@/views/HomeView.vue')
+        component: () => import('@/views/home-view.vue')
       }
     ]
-  },
+  }
 ]
