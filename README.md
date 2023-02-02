@@ -1,8 +1,8 @@
 <!--
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-01 18:15:07
- * @FilePath: /my-vue3-app/README.md
+ * @LastEditTime: 2023-02-02 11:12:22
+ * @FilePath: /easy-vue3-template/README.md
 -->
 # Vue 3 + Vite
 
@@ -14,21 +14,21 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 
 ## 目录结构
-  ├─ .vscode              
-  ├─ public                  
-  ├─ src                     
-  │  ├─ api                  
-  │  ├─ assets               
-  │  ├─ common               
-  │  ├─ components           
-  │  ├─ layout               
-  │  ├─ router               
-  │  ├─ store                
-  │  ├─ style                
-  │  ├─ utils                
-  │  ├─ views                
-  │  ├─ App.vue              
-  │  ├─ auto-import.d.ts     
+```
+  ├─ .vscode         // 编辑器配置     
+  ├─ public          // 资源目录        
+  ├─ src             // 源码        
+  │  ├─ api          // 接口        
+  │  ├─ assets       // 静态资源目录        
+  │  ├─ components   // 公共组件目录        
+  │  ├─ layout       // 布局        
+  │  ├─ router       // 路由      
+  │  ├─ store        // pinia        
+  │  ├─ style        // 样式      
+  │  ├─ utils        // 公共组件目录        
+  │  ├─ views        // 页面目录        
+  │  ├─ App.vue             
+  │  ├─ auto-import.d.ts // 自动导入     
   │  └─ main.js              
   ├─ README.md               
   ├─ index.html              
@@ -36,3 +36,4 @@ This template should help get you started developing with Vue 3 in Vite. The tem
   ├─ package.json            
   ├─ pnpm-lock.yaml          
   └─ vite.config.js          
+```

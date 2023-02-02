@@ -1,8 +1,8 @@
 <!--
  * @Date: 2023-01-31 16:22:48
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-01 11:51:23
- * @FilePath: /my-vue3-app/src/views/HomeView.vue
+ * @LastEditTime: 2023-02-02 11:24:51
+ * @FilePath: /easy-vue3-template/src/views/HomeView.vue
 -->
 <template>
     HomeView
