@@ -4,6 +4,7 @@ module.exports = {
   customSyntax: 'postcss-html',
   extends: ['stylelint-config-standard', 'stylelint-config-prettier', 'stylelint-config-html'],
   rules: {
+    'property-no-vendor-prefix': null,
     'selector-class-pattern': null,
     'selector-pseudo-class-no-unknown': [
       true,
@@ -20,18 +21,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: [
-          'tailwind',
-          'apply',
-          'variants',
-          'responsive',
-          'screen',
-          'function',
-          'if',
-          'each',
-          'include',
-          'mixin'
-        ]
+        ignoreAtRules: ['tailwind', 'apply', 'variants', 'responsive', 'screen', 'function', 'if', 'each', 'include', 'mixin']
       }
     ],
     'no-empty-source': null,
