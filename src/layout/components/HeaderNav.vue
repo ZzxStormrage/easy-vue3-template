@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-02-01 12:22:04
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-02 15:12:56
+ * @LastEditTime: 2023-02-07 15:32:48
  * @FilePath: /easy-vue3-template/src/layout/components/HeaderNav.vue
 -->
 <template>
@@ -29,7 +29,7 @@ const navList = ref([
 </script>
 <style lang="scss" scoped>
 .header-nav {
-  background: rgb(0 0 0 / 80%);
+  background: var(--header-bg-color);
 
   .nav-list {
     display: flex;

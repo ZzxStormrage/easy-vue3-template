@@ -1,0 +1,7 @@
+/** 全局 CSS 变量，这种变量不仅可以在 CSS 和 SCSS 中使用，还可以导入到 JS 中使用 */
+
+:root {
+  /** 全局背景色 */
+  --body-bg-color: #f2f3f5;
+  --header-bg-color: rgba(0, 0, 0, 0.756);
+}
