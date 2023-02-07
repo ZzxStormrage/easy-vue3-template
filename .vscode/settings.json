@@ -3,8 +3,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": true, // 开启stylelint自动修复
   },
+  // 关闭编辑器内置样式检查（避免与stylelint冲突）
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
   "eslint.alwaysShowStatus": true,
   // 保存的时候自动格式化
   "editor.formatOnSave": true,
@@ -12,9 +16,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // 配置该项，新建文件时默认就是space：2
   "editor.tabSize": 2,
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
   // stylelint校验的文件格式
   "stylelint.validate": [
     "css",

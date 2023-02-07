@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-standard-scss', 'stylelint-config-recess-order', 'stylelint-config-prettier'],
-  plugins: ['stylelint-order'],
+  extends: ['stylelint-config-standard', 'stylelint-config-standard-scss', 'stylelint-config-rational-order'],
+  plugins: ['stylelint-scss', 'stylelint-order'],
   // 不同格式的文件指定自定义语法
   overrides: [
     {
