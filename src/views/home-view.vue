@@ -1,12 +1,12 @@
 <!--
  * @Date: 2023-02-02 11:31:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-03 15:59:03
+ * @LastEditTime: 2023-02-07 10:54:06
  * @FilePath: /easy-vue3-template/src/views/home-view.vue
 -->
 <template>
   <div class="home-main">
-    <p class="title">Easy Vue3</p>
+    <p class="title glitch" data-text="Easy Vue3">Easy Vue3</p>
     <ul class="list">
       <li class="item" v-for="(item, index) in linkList" :key="index">
         <span>
@@ -54,6 +54,26 @@ const linkList = [
 </script>
 <style lang="scss" scoped>
 .home-main {
+  @keyframes noise-anim {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage($i * (1 / $steps))} {
+        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      }
+    }
+  }
+
+  @keyframes noise-anim-2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage($i * (1 / $steps))} {
+        clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      }
+    }
+  }
+
   width: 100%;
   height: 100%;
   background: linear-gradient(rgb(0 3 70) 0%, rgb(255 160 0 / 100%) 100%), linear-gradient(60deg, rgb(0 5 34) 0%, rgb(0 255 229) 100%),
@@ -61,17 +81,38 @@ const linkList = [
   background-blend-mode: overlay, soft-light, difference, normal;
 
   .title {
-    display: inline-block;
-    width: 100%;
-    padding-top: 0.5px;
-    margin-top: 176px;
+    position: relative;
+    top: 130px;
+    margin: 0 auto;
+    width: 280px;
+    font-size: 60px;
+    color: white;
+  }
+
+  .glitch::after {
+    position: absolute;
+    top: 0;
+    left: 2px;
     overflow: hidden;
-    font-size: 50px;
-    color: transparent;
-    text-align: center;
-    background-image: linear-gradient(180deg, #f2e7f8, #3eaf7c);
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: white;
+    background: transparent;
+    text-shadow: -1px 0 red;
+    clip: rect(0, 300px, 0, 0);
+    content: attr(data-text);
+    animation: noise-anim 4s infinite linear alternate-reverse;
+  }
+
+  .glitch::before {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    overflow: hidden;
+    color: white;
+    background: transparent;
+    text-shadow: 1px 0 blue;
+    clip: rect(0, 300px, 0, 0);
+    content: attr(data-text);
+    animation: noise-anim-2 4s infinite linear alternate-reverse;
   }
 
   .list {
@@ -79,14 +120,14 @@ const linkList = [
     top: 50%;
     left: 50%;
     display: flex;
+    justify-content: center;
+    margin: 0 auto;
     width: 500px;
     height: 200px;
-    margin: 0 auto;
     font-size: 35px;
     color: white;
     transform: translate(-50%, -70%);
     flex-wrap: wrap;
-    justify-content: center;
 
     .item {
       margin: 0 10px;
