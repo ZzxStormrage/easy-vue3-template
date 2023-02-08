@@ -1,13 +1,18 @@
 <!--
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-07 15:36:04
+ * @LastEditTime: 2023-02-07 15:40:16
  * @FilePath: /easy-vue3-template/README.md
 -->
-# Vue 3 + Vite
+## Feature
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
+- Vue 
+- Router@4
+- Pinia
+- Eslint
+- Prettier
+- StyleLint
+- Node.js v16.18.0
 
 ## 目录结构
 ```
