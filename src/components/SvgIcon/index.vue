@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2023-02-07 15:51:46
+ * @LastEditors: zzx 452436275@qq.com
+ * @LastEditTime: 2023-02-14 10:44:02
+ * @FilePath: /easy-vue3-template/src/components/SvgIcon/index.vue
+-->
 <template>
   <svg aria-hidden="true" class="icon">
     <use :xlink:href="symbolId" :fill="color" />
@@ -32,7 +38,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .icon {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
 }
 </style>
