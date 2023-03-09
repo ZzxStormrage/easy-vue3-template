@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-07 15:40:16
+ * @LastEditTime: 2023-03-09 15:51:21
  * @FilePath: /easy-vue3-template/README.md
 -->
 ## Feature
@@ -9,6 +9,7 @@
 - Vue 
 - Router@4
 - Pinia
+- Element Plus
 - Eslint
 - Prettier
 - StyleLint

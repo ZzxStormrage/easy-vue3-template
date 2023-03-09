@@ -1,11 +1,20 @@
-<!--
- * @Date: 2023-02-02 15:14:10
- * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-02 15:19:57
- * @FilePath: /easy-vue3-template/src/layout/components/AppMain.vue
--->
+<script setup>
+const route = useRoute()
+const key = computed(() => {
+  return route.path
+})
+</script>
+
 <template>
-  <router-view></router-view>
+  <section class="app-main">
+    <router-view v-slot="{ Component }">
+      <transition name="fade-transform" mode="out-in">
+        <!-- <keep-alive> -->
+        <component :is="Component" :key="key" />
+        <!-- </keep-alive> -->
+      </transition>
+    </router-view>
+  </section>
 </template>
-<script setup></script>
+
 <style lang="scss" scoped></style>

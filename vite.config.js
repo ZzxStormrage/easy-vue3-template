@@ -1,13 +1,15 @@
 /*
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-02-07 15:50:30
+ * @LastEditTime: 2023-03-09 15:52:23
  * @FilePath: /easy-vue3-template/vite.config.js
  */
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 
@@ -16,9 +18,13 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ['vue'],
+      imports: ['vue', 'vue-router'],
+      resolvers: [ElementPlusResolver()],
       dts: 'src/auto-import.d.ts'
       /* options */
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()]
     }),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹
