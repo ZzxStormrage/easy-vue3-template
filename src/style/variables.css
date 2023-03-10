@@ -4,4 +4,14 @@
   /** 全局背景色 */
   --body-bg-color: #f2f3f5;
   --header-bg-color: rgba(0, 0, 0, 0.756);
+
+  /** Sidebar 组件 */
+  --sidebar-width: 220px;
+  --sidebar-hide-width: 58px;
+  --sidebar-menu-item-height: 60px;
+  --sidebar-menu-tip-line-bg-color: var(--el-color-primary);
+  --sidebar-menu-bg-color: #001428;
+  --sidebar-menu-hover-bg-color: #ffffff10;
+  --sidebar-menu-text-color: #c0c4cc;
+  --sidebar-menu-active-text-color: #ffffff;
 }

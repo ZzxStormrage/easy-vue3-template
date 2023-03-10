@@ -1,11 +1,60 @@
 <!--
  * @Date: 2023-03-09 15:47:59
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-09 15:52:57
+ * @LastEditTime: 2023-03-10 11:20:01
  * @FilePath: /easy-vue3-template/src/layout/components/Sidebar/index.vue
 -->
 <template>
-  <div></div>
+  <div>
+    <Logo />
+
+    <el-scrollbar wrap-class="scrollbar-wrap">
+      <el-menu
+        :default-active="activeMenu"
+        :collapse="isCollapse"
+        :background-color="SidebarMenuBgColor"
+        :text-color="SidebarMenuTextColor"
+        :active-text-color="SidebarMenuActiveTextColor"
+        :unique-opened="true"
+        :collapse-transition="false"
+        mode="vertical"
+      >
+        <SidebarItem
+          v-for="route in permissionStore.routes"
+          :key="route.path"
+          :item="route"
+          :basePath="route.path"
+          :is-collapse="isCollapse"
+        />
+      </el-menu>
+    </el-scrollbar>
+  </div>
 </template>
-<script setup></script>
+<script setup>
+  import Logo from './Logo.vue'
+  import SidebarItem from './SidebarItem.vue'
+  import { getCssVariableValue } from '@/utils'
+  import { usePermissionStore } from '@/store/modules/permission.js'
+
+  const route = useRoute()
+  // const appStore = useAppStore()
+  const permissionStore = usePermissionStore()
+  console.log('🚀 ~ file: index.vue:42 ~ permissionStore:', permissionStore)
+
+  const SidebarMenuBgColor = getCssVariableValue('--sidebar-menu-bg-color')
+  const SidebarMenuTextColor = getCssVariableValue('--sidebar-menu-text-color')
+  const SidebarMenuActiveTextColor = getCssVariableValue('--sidebar-menu-active-text-color')
+
+  const activeMenu = computed(() => {
+    const { meta, path } = route
+    if (meta.activeMenu) {
+      return meta.activeMenu
+    }
+    return path
+  })
+
+  const isCollapse = computed(() => {
+    return false
+  })
+</script>
 <style lang="scss" scoped></style>
