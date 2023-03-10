@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-10 15:34:07
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 18:21:55
+ * @LastEditTime: 2023-03-10 18:30:53
  * @FilePath: /easy-vue3-template/src/store/modules/user.js
  */
 import { ref } from 'vue'
@@ -12,7 +12,7 @@ import { resetRouter } from '@/router'
 import { loginApi, getUserInfoApi } from '@/api/login'
 
 export const useUserStore = defineStore('user', () => {
-  const token = ref(getToken() || '')
+  const token = ref(getToken() || 'fake token')
   const roles = ref(['admin'])
 
   /** 设置角色数组 */

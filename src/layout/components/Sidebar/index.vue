@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-03-09 15:47:59
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 18:24:36
+ * @LastEditTime: 2023-03-10 18:27:27
  * @FilePath: /easy-vue3-template/src/layout/components/Sidebar/index.vue
 -->
 <template>
@@ -38,6 +38,7 @@
   const route = useRoute()
   // const appStore = useAppStore()
   const permissionStore = usePermissionStore()
+  console.log('🚀 ~ file: index.vue:41 ~ permissionStore:', toRaw(permissionStore.routes))
 
   const SidebarMenuBgColor = getCssVariableValue('--sidebar-menu-bg-color')
   const SidebarMenuTextColor = getCssVariableValue('--sidebar-menu-text-color')

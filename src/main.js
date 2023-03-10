@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 16:54:43
+ * @LastEditTime: 2023-03-10 18:30:35
  * @FilePath: /easy-vue3-template/src/main.js
  */
 import { createApp } from 'vue'
@@ -24,5 +24,3 @@ app.use(store)
 app.mount('#app')
 
 app.component('SvgIcon', svgIcon)
-
-localStorage.setItem('token', 'fake token')

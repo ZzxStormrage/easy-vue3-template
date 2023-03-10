@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-10 11:15:33
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 16:48:35
+ * @LastEditTime: 2023-03-10 18:28:45
  * @FilePath: /easy-vue3-template/src/store/modules/permission.js
  */
 import { ref } from 'vue'
