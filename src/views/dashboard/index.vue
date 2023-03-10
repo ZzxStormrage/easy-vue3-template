@@ -9,18 +9,18 @@
 </template>
 
 <script>
-export default {
-  props: {},
-  data() {
-    return {}
-  },
-  computed: {},
-  watch: {},
-  methods: {},
-  components: {},
-  created() {},
-  mounted() {}
-}
+  export default {
+    props: {},
+    data() {
+      return {}
+    },
+    computed: {},
+    watch: {},
+    methods: {},
+    components: {},
+    created() {},
+    mounted() {}
+  }
 </script>
 
 <style scoped lang="scss"></style>

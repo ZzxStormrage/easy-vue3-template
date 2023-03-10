@@ -1,25 +1,27 @@
 /*
  * @Date: 2023-03-10 11:22:15
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 11:23:45
+ * @LastEditTime: 2023-03-10 18:19:00
  * @FilePath: /easy-vue3-template/src/router/permission.js
  */
 import router from '@/router'
 import { useUserStoreHook } from '@/store/modules/user'
 import { usePermissionStoreHook } from '@/store/modules/permission'
 import { ElMessage } from 'element-plus'
-import { whiteList } from '@/config/white-list'
-import { getToken } from '@/utils/cache/cookies'
-import asyncRouteSettings from '@/config/async-route'
+import { getToken } from '@/utils/auth'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 NProgress.configure({ showSpinner: false })
 
+const whiteList = ['/login']
+
 router.beforeEach(async (to, _from, next) => {
   NProgress.start()
   const userStore = useUserStoreHook()
   const permissionStore = usePermissionStoreHook()
+  console.log('🚀 ~ file: permission.js:25 ~ router.beforeEach ~ getToken():', getToken())
+
   // 判断该用户是否登录
   if (getToken()) {
     if (to.path === '/login') {
@@ -30,17 +32,12 @@ router.beforeEach(async (to, _from, next) => {
       // 检查用户是否已获得其权限角色
       if (userStore.roles.length === 0) {
         try {
-          if (asyncRouteSettings.open) {
-            // 注意：角色必须是一个数组！ 例如: ['admin'] 或 ['developer', 'editor']
-            await userStore.getInfo()
-            const roles = userStore.roles
-            // 根据角色生成可访问的 Routes（可访问路由 = 常驻路由 + 有访问权限的动态路由）
-            permissionStore.setRoutes(roles)
-          } else {
-            // 没有开启动态路由功能，则启用默认角色
-            userStore.setRoles(asyncRouteSettings.defaultRoles)
-            permissionStore.setRoutes(asyncRouteSettings.defaultRoles)
-          }
+          // 注意：角色必须是一个数组！ 例如: ['admin'] 或 ['developer', 'editor']
+          await userStore.getInfo()
+          const roles = userStore.roles
+          // 根据角色生成可访问的 Routes（可访问路由 = 常驻路由 + 有访问权限的动态路由）
+          permissionStore.setRoutes(roles)
+
           // 将'有访问权限的动态路由' 添加到 Router 中
           permissionStore.dynamicRoutes.forEach((route) => {
             router.addRoute(route)

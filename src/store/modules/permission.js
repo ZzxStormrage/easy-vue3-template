@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-10 11:15:33
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 11:16:19
+ * @LastEditTime: 2023-03-10 16:48:35
  * @FilePath: /easy-vue3-template/src/store/modules/permission.js
  */
 import { ref } from 'vue'
@@ -12,7 +12,7 @@ import { constantRoutes, asyncRoutes } from '@/router'
 const hasPermission = (roles, route) => {
   if (route.meta && route.meta.roles) {
     return roles.some((role) => {
-      if (route.meta?.roles !== undefined) {
+      if (route.meta.roles !== undefined) {
         return route.meta.roles.includes(role)
       } else {
         return false
