@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-10 15:55:33
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 16:31:52
+ * @LastEditTime: 2023-03-13 15:48:52
  * @FilePath: /easy-vue3-template/src/axios/request.js
  */
 import axios from 'axios'
@@ -97,8 +97,7 @@ function createRequestFunction(service) {
     const configDefault = {
       headers: {
         // 携带 Token
-        Authorization: 'Bearer ' + getToken(),
-        'Content-Type': get(config, 'headers.Content-Type', 'application/json')
+        Authorization: 'Bearer ' + getToken()
       },
       timeout: 5000,
       baseURL: import.meta.env.VITE_BASE_API,

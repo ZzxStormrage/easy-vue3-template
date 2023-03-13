@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-10 11:22:15
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 18:19:00
+ * @LastEditTime: 2023-03-13 17:28:59
  * @FilePath: /easy-vue3-template/src/router/permission.js
  */
 import router from '@/router'
@@ -20,7 +20,6 @@ router.beforeEach(async (to, _from, next) => {
   NProgress.start()
   const userStore = useUserStoreHook()
   const permissionStore = usePermissionStoreHook()
-  console.log('🚀 ~ file: permission.js:25 ~ router.beforeEach ~ getToken():', getToken())
 
   // 判断该用户是否登录
   if (getToken()) {
@@ -42,6 +41,7 @@ router.beforeEach(async (to, _from, next) => {
           permissionStore.dynamicRoutes.forEach((route) => {
             router.addRoute(route)
           })
+
           // 确保添加路由已完成
           // 设置 replace: true, 因此导航将不会留下历史记录
           next({ ...to, replace: true })

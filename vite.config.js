@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-09 15:52:23
+ * @LastEditTime: 2023-03-13 15:49:32
  * @FilePath: /easy-vue3-template/vite.config.js
  */
 import { defineConfig } from 'vite'
@@ -54,7 +54,7 @@ export default defineConfig({
     // 是否开启 https
     https: false,
     // 端口号
-    port: 3000,
+    port: 8080,
     // 监听所有地址
     host: '0.0.0.0',
     // 服务启动时是否自动打开浏览器

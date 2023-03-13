@@ -12,11 +12,13 @@
     "lint:style": "stylelint \"./**/*.{css,less,vue,html}\" --fix"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.3.4",
     "element-plus": "^2.2.36",
     "nprogress": "^0.2.0",
+    "path-browserify": "^1.0.1",
     "pinia": "^2.0.29",
     "vue": "^3.2.45",
-    "axios": "^1.3.4",
     "vue-router": "4"
   },
   "devDependencies": {

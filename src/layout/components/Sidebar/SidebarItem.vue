@@ -1,11 +1,14 @@
 <!--
  * @Date: 2023-03-10 11:10:53
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 11:11:07
+ * @LastEditTime: 2023-03-13 17:28:29
  * @FilePath: /easy-vue3-template/src/layout/components/Sidebar/SidebarItem.vue
 -->
 <template>
-  <div>
+  <div
+    v-if="!props.item.meta?.hidden"
+    :class="{ 'simple-mode': props.isCollapse, 'first-level': props.isFirstLevel }"
+  >
     <el-sub-menu :index="resolvePath(props.item.path)" popper-append-to-body>
       <template #title>
         <svg-icon
@@ -33,6 +36,9 @@
   </div>
 </template>
 <script setup>
+  import path from 'path-browserify'
+  import { isExternal } from '@/utils/validate'
+
   const props = defineProps({
     item: {
       type: Object,
@@ -51,5 +57,40 @@
       default: ''
     }
   })
+
+  const resolvePath = (routePath) => {
+    if (isExternal(routePath)) {
+      return routePath
+    }
+    if (isExternal(props.basePath)) {
+      return props.basePath
+    }
+    return path.resolve(props.basePath, routePath)
+  }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .svg-icon {
+    min-width: 1em;
+    margin-right: 12px;
+    font-size: 18px;
+  }
+
+  .el-icon {
+    width: 1em;
+    margin-right: 12px;
+    font-size: 18px;
+  }
+
+  .simple-mode {
+    &.first-level {
+      :deep(.el-sub-menu) {
+        .el-sub-menu__icon-arrow {
+          display: none;
+        }
+        span {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+</style>

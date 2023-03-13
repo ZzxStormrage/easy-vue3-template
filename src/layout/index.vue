@@ -1,16 +1,43 @@
 <!--
  * @Date: 2023-02-01 12:21:06
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-09 16:24:07
+ * @LastEditTime: 2023-03-13 16:18:50
  * @FilePath: /easy-vue3-template/src/layout/index.vue
 -->
 <template>
   <div class="app-wrap">
-    <Sidebar />
-    <AppMain />
+    <Sidebar class="sidebar-container" />
+
+    <div class="main-container">
+      <AppMain />
+    </div>
   </div>
 </template>
 <script setup>
-import { AppMain, Sidebar } from './components'
+  import { AppMain, Sidebar } from './components'
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .app-wrap {
+    position: relative;
+    width: 100%;
+  }
+  .sidebar-container {
+    transition: width 0.28s;
+    width: var(--v3-sidebar-width) !important;
+    height: 100%;
+    position: fixed;
+    font-size: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+  }
+
+  .main-container {
+    min-height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: var(--v3-sidebar-width);
+    position: relative;
+  }
+</style>

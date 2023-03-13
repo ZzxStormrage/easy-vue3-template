@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-10 11:15:33
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-10 18:28:45
+ * @LastEditTime: 2023-03-13 17:28:47
  * @FilePath: /easy-vue3-template/src/store/modules/permission.js
  */
 import { ref } from 'vue'
@@ -48,6 +48,7 @@ export const usePermissionStore = defineStore('permission', () => {
     } else {
       accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
     }
+
     routes.value = constantRoutes.concat(accessedRoutes)
     dynamicRoutes.value = accessedRoutes
   }
