@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-13 15:49:32
+ * @LastEditTime: 2023-03-14 16:23:43
  * @FilePath: /easy-vue3-template/vite.config.js
  */
 import { defineConfig } from 'vite'
@@ -9,14 +9,19 @@ import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import svgLoader from 'vite-svg-loader'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    svgLoader(),
+    /** DefineOptions 可以更简单的注册组件名称 */
+    DefineOptions(),
     AutoImport({
       imports: ['vue', 'vue-router'],
       resolvers: [ElementPlusResolver()],

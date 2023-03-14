@@ -5,7 +5,7 @@
  * @FilePath: /easy-vue3-template/.prettierrc.cjs
  */
 module.exports = {
-  printWidth: 100, // 单行输出（不折行）的（最大）长度
+  printWidth: 120, // 单行输出（不折行）的（最大）长度
   tabWidth: 2, // 每个缩进级别的空格数
   tabs: false, // 使用制表符 (tab) 缩进行而不是空格 (space)。
   semi: false, // 是否在语句末尾打印分号
@@ -21,6 +21,6 @@ module.exports = {
   vueIndentScriptAndStyle: false, // 在VUE文件中不要缩进脚本和样式标记
   stylelintIntegration: true,
   vueIndentScriptAndStyle: true,
-  endOfLine: 'auto',
+  endOfLine: 'auto'
   // requirePragma: true
 }

@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-01-31 16:21:02
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-13 17:00:28
+ * @LastEditTime: 2023-03-14 17:03:18
  * @FilePath: /easy-vue3-template/src/router/index.js
  */
 import { createRouter, createWebHistory } from 'vue-router'
@@ -12,41 +12,11 @@ import homePage from './modules/home'
 export const constantRoutes = [
   ...homePage,
   {
-    path: '/redirect',
-    component: Layout,
-    meta: {
-      hidden: true
-    },
-    children: [
-      {
-        path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect/index.vue')
-      }
-    ]
-  },
-  {
     path: '/login',
     component: () => import('@/views/login/index.vue'),
     meta: {
       hidden: true
     }
-  },
-  {
-    path: '/',
-    component: Layout,
-    redirect: '/dashboard',
-    children: [
-      {
-        path: 'dashboard',
-        component: () => import('@/views/dashboard/index.vue'),
-        name: 'Dashboard',
-        meta: {
-          title: '首页',
-          svgIcon: 'dashboard',
-          affix: true
-        }
-      }
-    ]
   },
   {
     path: '/menu',
@@ -123,6 +93,7 @@ export const constantRoutes = [
     ]
   }
 ]
+console.log('🚀 ~ file: index.js:96 ~ constantRoutes:', constantRoutes)
 
 export const asyncRoutes = []
 

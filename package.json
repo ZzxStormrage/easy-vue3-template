@@ -18,6 +18,7 @@
     "nprogress": "^0.2.0",
     "path-browserify": "^1.0.1",
     "pinia": "^2.0.29",
+    "unplugin-vue-define-options": "^1.2.4",
     "vue": "^3.2.45",
     "vue-router": "4"
   },
@@ -49,6 +50,7 @@
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.0.0",
     "vite-plugin-svg-icons": "^2.0.1",
+    "vite-svg-loader": "^4.0.0",
     "vue-eslint-parser": "^9.1.0"
   }
 }

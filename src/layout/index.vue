@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-02-01 12:21:06
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-13 16:18:50
+ * @LastEditTime: 2023-03-14 18:29:13
  * @FilePath: /easy-vue3-template/src/layout/index.vue
 -->
 <template>
@@ -23,7 +23,7 @@
   }
   .sidebar-container {
     transition: width 0.28s;
-    width: var(--v3-sidebar-width) !important;
+    width: var(--sidebar-width) !important;
     height: 100%;
     position: fixed;
     font-size: 0px;
@@ -37,7 +37,7 @@
   .main-container {
     min-height: 100%;
     transition: margin-left 0.28s;
-    margin-left: var(--v3-sidebar-width);
+    margin-left: var(--sidebar-width);
     position: relative;
   }
 </style>
