@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-02-01 12:21:06
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-14 18:29:13
+ * @LastEditTime: 2023-03-15 14:47:50
  * @FilePath: /easy-vue3-template/src/layout/index.vue
 -->
 <template>
@@ -32,6 +32,7 @@
     left: 0;
     z-index: 1001;
     overflow: hidden;
+    background-color: var(--sidebar-menu-bg-color);
   }
 
   .main-container {

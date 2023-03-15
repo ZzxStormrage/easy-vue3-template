@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-03-09 15:47:59
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-14 18:24:13
+ * @LastEditTime: 2023-03-15 14:31:36
  * @FilePath: /easy-vue3-template/src/layout/components/Sidebar/index.vue
 -->
 <template>
@@ -75,7 +75,7 @@
 
   .el-scrollbar {
     height: 100%;
-    :deep(.scrollbar-wrapper) {
+    :deep(.scrollbar-wrap) {
       // 限制水平宽度
       overflow-x: hidden !important;
       .el-scrollbar__view {
