@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-03-10 11:10:53
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-14 18:21:02
+ * @LastEditTime: 2023-03-15 15:32:06
  * @FilePath: /easy-vue3-template/src/layout/components/Sidebar/SidebarItem.vue
 -->
 <template>
@@ -40,6 +40,7 @@
 <script setup>
   import path from 'path-browserify'
   import { isExternal } from '@/utils/validate'
+  import SidebarItemLink from './SidebarItemLink.vue'
 
   const props = defineProps({
     item: {

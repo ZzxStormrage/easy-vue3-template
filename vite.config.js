@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-14 16:23:43
+ * @LastEditTime: 2023-03-15 15:29:54
  * @FilePath: /easy-vue3-template/vite.config.js
  */
 import { defineConfig } from 'vite'
@@ -31,23 +31,10 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()]
     }),
+    /** SVG */
     createSvgIconsPlugin({
-      // 指定需要缓存的图标文件夹
-      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-      // 指定symbolId格式
+      iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
       symbolId: 'icon-[dir]-[name]'
-
-      /**
-       * 自定义插入位置
-       * @default: body-last
-       */
-      // inject?: 'body-last' | 'body-first'
-
-      /**
-       * custom dom id
-       * @default: __svg__icons__dom__
-       */
-      // customDomId: '__svg__icons__dom__',
     })
   ],
   resolve: {
