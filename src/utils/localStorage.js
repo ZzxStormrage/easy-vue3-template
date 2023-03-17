@@ -1,11 +1,26 @@
 /*
- * @Author: your name
- * @Date: 2021-01-13 10:07:06
- * @LastEditTime: 2023-03-10 16:55:01
+ * @Date: 2023-03-16 15:35:19
  * @LastEditors: zzx 452436275@qq.com
- * @Description: In User Settings Edit
- * @FilePath: /easy-vue3-template/src/utils/auth.js
+ * @LastEditTime: 2023-03-16 15:39:37
+ * @FilePath: /easy-vue3-template/src/utils/localStorage.js
  */
+/** 统一处理 localStorage */
+
+export const getSidebarStatus = () => {
+  return localStorage.getItem('sidebar-status')
+}
+//  'opened' | 'closed'
+export const setSidebarStatus = (sidebarStatus) => {
+  localStorage.setItem('sidebar-status', sidebarStatus)
+}
+
+export const getActiveThemeName = () => {
+  return localStorage.getItem('active-theme-name')
+}
+export const setActiveThemeName = (themeName) => {
+  localStorage.setItem('active-theme-name', themeName)
+}
+
 export function getToken() {
   try {
     return localStorage.getItem('token') || ''

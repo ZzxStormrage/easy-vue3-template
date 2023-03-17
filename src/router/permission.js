@@ -1,14 +1,14 @@
 /*
  * @Date: 2023-03-10 11:22:15
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-13 17:28:59
+ * @LastEditTime: 2023-03-17 11:35:45
  * @FilePath: /easy-vue3-template/src/router/permission.js
  */
 import router from '@/router'
 import { useUserStoreHook } from '@/store/modules/user'
 import { usePermissionStoreHook } from '@/store/modules/permission'
 import { ElMessage } from 'element-plus'
-import { getToken } from '@/utils/auth'
+import { getToken } from '@/utils/localStorage'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 

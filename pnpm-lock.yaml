@@ -17,6 +17,7 @@ specifiers:
   eslint-plugin-vue: ^9.9.0
   nprogress: ^0.2.0
   path-browserify: ^1.0.1
+  path-to-regexp: ^6.2.1
   pinia: ^2.0.29
   postcss: ^8.4.21
   postcss-html: ^1.5.0
@@ -46,6 +47,7 @@ dependencies:
   element-plus: registry.npmmirror.com/element-plus/2.2.36_vue@3.2.45
   nprogress: registry.npmmirror.com/nprogress/0.2.0
   path-browserify: registry.npmmirror.com/path-browserify/1.0.1
+  path-to-regexp: registry.npmmirror.com/path-to-regexp/6.2.1
   pinia: registry.npmmirror.com/pinia/2.0.29_vue@3.2.45
   unplugin-vue-define-options: registry.npmmirror.com/unplugin-vue-define-options/1.2.4_vue@3.2.45
   vue: registry.npmmirror.com/vue/3.2.45
@@ -5402,6 +5404,12 @@ packages:
     name: path-parse
     version: 1.0.7
     dev: true
+
+  registry.npmmirror.com/path-to-regexp/6.2.1:
+    resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/path-to-regexp/-/path-to-regexp-6.2.1.tgz}
+    name: path-to-regexp
+    version: 6.2.1
+    dev: false
 
   registry.npmmirror.com/path-type/3.0.0:
     resolution: {integrity: sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/path-type/-/path-type-3.0.0.tgz}

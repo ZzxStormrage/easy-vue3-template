@@ -20,6 +20,7 @@
     "pinia": "^2.0.29",
     "unplugin-vue-define-options": "^1.2.4",
     "vue": "^3.2.45",
+    "path-to-regexp": "^6.2.1",
     "vue-router": "4"
   },
   "devDependencies": {

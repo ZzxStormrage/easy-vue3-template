@@ -1,13 +1,13 @@
 /*
  * @Date: 2023-03-10 15:55:33
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-13 15:48:52
+ * @LastEditTime: 2023-03-16 16:03:32
  * @FilePath: /easy-vue3-template/src/axios/request.js
  */
 import axios from 'axios'
 import { useUserStoreHook } from '@/store/modules/user'
 import { ElMessage } from 'element-plus'
-import { getToken } from '@/utils/auth'
+import { getToken } from '@/utils/localStorage'
 
 /** 创建请求实例 */
 function createService() {

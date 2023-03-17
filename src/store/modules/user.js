@@ -1,13 +1,13 @@
 /*
  * @Date: 2023-03-10 15:34:07
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-13 16:42:15
+ * @LastEditTime: 2023-03-16 16:03:15
  * @FilePath: /easy-vue3-template/src/store/modules/user.js
  */
 import { ref } from 'vue'
 import store from '@/store'
 import { defineStore } from 'pinia'
-import { getToken, removeToken, setToken } from '@/utils/auth'
+import { getToken, removeToken, setToken } from '@/utils/localStorage'
 import { resetRouter } from '@/router'
 import { loginApi, getUserInfoApi } from '@/api/login'
 
