@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-10 15:34:07
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-16 16:03:15
+ * @LastEditTime: 2023-03-17 16:25:00
  * @FilePath: /easy-vue3-template/src/store/modules/user.js
  */
 import { ref } from 'vue'
@@ -21,22 +21,21 @@ export const useUserStore = defineStore('user', () => {
   }
   /** 登录 */
   const login = (loginData) => {
-    return new Promise((resolve, reject) => {
-      // loginApi({
-      //   username: loginData.username,
-      //   password: loginData.password
-      // })
-      //   .then((res) => {
-      //     setToken(res.data.token)
-      //     token.value = res.data.token
-      //     resolve(true)
-      //   })
-      //   .catch((error) => {
-      //     reject(error)
-      //   })
-      setToken('fake token')
-      token.value = 'fake token'
-      resolve()
+    return new Promise(async (resolve, reject) => {
+      let params = {
+        username: loginData.username,
+        password: loginData.password
+      }
+
+      let { err, res } = await loginApi(params)
+
+      if (!err) {
+        setToken(res.data.token)
+        token.value = res.data.token
+        resolve()
+      } else {
+        reject(err)
+      }
     })
   }
 

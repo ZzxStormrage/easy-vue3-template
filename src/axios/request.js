@@ -5,12 +5,13 @@ import { getToken } from '@/utils/localStorage'
 import { useUserStoreHook } from '@/store/modules/user'
 
 const IS_HTTPS = document.location.protocol === 'https:'
-const baseURL = IS_HTTPS ? process.env.VUE_APP_BASE_API.replace(/^http/, 'https') : process.env.VUE_APP_BASE_API
+const VITE_BASE_API = import.meta.env.VITE_BASE_API
+const BASE_URL = IS_HTTPS ? VITE_BASE_API.replace(/^http/, 'https') : VITE_BASE_API
 // 约定好返回正取时的 code
 const SUCEESS_CODE = '0000'
 
 const service = axios.create({
-  baseURL: baseURL,
+  baseURL: BASE_URL,
   timeout: 500000 // request timeout
 })
 
@@ -27,9 +28,8 @@ service.interceptors.request.use(
       }
     }
 
-    if (store.getters.token) {
-      config.headers.Authorization = 'Bearer ' + getToken()
-    }
+    config.headers.Authorization = 'Bearer ' + getToken()
+
     return config
   },
   (error) => {
@@ -102,7 +102,7 @@ service.interceptors.response.use(
     }
 
     if (error.response.status !== 401) {
-      ElMessage.error(apiData.message || 'Error')
+      ElMessage.error(error.message || 'Error')
     }
 
     return Promise.reject(error)

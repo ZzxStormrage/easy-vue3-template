@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-01-31 16:02:26
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-15 15:29:54
+ * @LastEditTime: 2023-03-17 16:20:45
  * @FilePath: /easy-vue3-template/vite.config.js
  */
 import { defineConfig } from 'vite'
@@ -54,7 +54,15 @@ export default defineConfig({
     // 允许跨域
     cors: true,
     // 自定义代理规则
-    proxy: {}
+    proxy: {
+      '/api/v1': {
+        target: 'http://fake.tmsx.net/',
+        ws: true,
+        /** 是否允许跨域 */
+        changeOrigin: true,
+        rewrite: (path) => path.replace('/api/v1', '')
+      }
+    }
   },
   build: {
     // 设置最终构建的浏览器兼容目标
