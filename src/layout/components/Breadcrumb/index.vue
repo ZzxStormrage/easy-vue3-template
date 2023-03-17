@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-03-17 12:20:09
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-17 12:20:17
+ * @LastEditTime: 2023-03-17 15:23:44
  * @FilePath: /easy-vue3-template/src/layout/components/Breadcrumb/index.vue
 -->
 
@@ -71,7 +71,7 @@
   .app-breadcrumb.el-breadcrumb {
     display: inline-block;
     font-size: 14px;
-    line-height: var(--v3-navigationbar-height);
+    line-height: var(--navigationbar-height);
     margin-left: 8px;
     .no-redirect {
       color: #97a8be;

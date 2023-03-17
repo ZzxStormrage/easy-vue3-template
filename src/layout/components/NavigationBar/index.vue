@@ -4,7 +4,6 @@
     <Breadcrumb class="breadcrumb" />
     <div class="right-menu">
       <ThemeSwitch v-if="showThemeSwitch" class="right-menu-item" />
-      <Notify v-if="showNotify" class="right-menu-item" />
       <el-dropdown class="right-menu-item">
         <div class="right-menu-avatar">
           <el-avatar :icon="UserFilled" :size="30" />
@@ -41,9 +40,6 @@
 
   const sidebar = computed(() => {
     return appStore.sidebar
-  })
-  const showNotify = computed(() => {
-    return settingsStore.showNotify
   })
   const showThemeSwitch = computed(() => {
     return settingsStore.showThemeSwitch

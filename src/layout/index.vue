@@ -28,7 +28,7 @@
       hideSidebar: !appStore.sidebar.opened,
       openSidebar: appStore.sidebar.opened,
       withoutAnimation: appStore.sidebar.withoutAnimation,
-      mobile: appStore.device === 0,
+      mobile: appStore.device === 'mobile',
       showGreyMode: showGreyMode.value,
       showColorWeakness: showColorWeakness.value
     }

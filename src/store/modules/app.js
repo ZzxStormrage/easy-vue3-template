@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-03-16 15:34:02
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-16 15:44:07
+ * @LastEditTime: 2023-03-17 12:44:56
  * @FilePath: /easy-vue3-template/src/store/modules/app.js
  */
 import { defineStore } from 'pinia'
@@ -12,7 +12,7 @@ export const useAppStore = defineStore('app', () => {
     opened: getSidebarStatus() !== 'closed',
     withoutAnimation: false
   })
-  const device = ref(0)
+  const device = ref('')
 
   const toggleSidebar = (withoutAnimation) => {
     sidebar.opened = !sidebar.opened

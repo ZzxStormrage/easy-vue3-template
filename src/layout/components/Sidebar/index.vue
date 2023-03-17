@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-03-09 15:47:59
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-03-15 14:31:36
+ * @LastEditTime: 2023-03-17 12:48:36
  * @FilePath: /easy-vue3-template/src/layout/components/Sidebar/index.vue
 -->
 <template>
@@ -33,10 +33,12 @@
   import Logo from './Logo.vue'
   import SidebarItem from './SidebarItem.vue'
   import { getCssVariableValue } from '@/utils'
+  import { useAppStore } from '@/store/modules/app'
   import { usePermissionStore } from '@/store/modules/permission.js'
 
   const route = useRoute()
-  // const appStore = useAppStore()
+  const appStore = useAppStore()
+
   const permissionStore = usePermissionStore()
   const SidebarMenuBgColor = getCssVariableValue('--sidebar-menu-bg-color')
   const SidebarMenuTextColor = getCssVariableValue('--sidebar-menu-text-color')
@@ -51,7 +53,7 @@
   })
 
   const isCollapse = computed(() => {
-    return false
+    return !appStore.sidebar.opened
   })
 </script>
 <style lang="scss" scoped>
