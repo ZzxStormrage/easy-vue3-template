@@ -1,18 +1,13 @@
 /* eslint-disable func-names */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
-/*
- * @Author: 秦少卫
- * @Date: 2023-02-03 21:50:10
- * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-07-12 17:04:21
- * @Description: 工作区初始化
- */
 
 import { fabric } from 'fabric'
 import { throttle } from 'lodash-es'
+import { v4 as uuid } from 'uuid'
 
 declare type EditorWorkspaceOption = { width: number; height: number }
+
 declare type ExtCanvas = fabric.Canvas & {
   isDragging: boolean
   lastPosX: number
@@ -36,9 +31,9 @@ class EditorWorkspace {
     this.option = option
     this.dragMode = false
     this._initBackground()
-    this._initWorkspace()
+    // this._initWorkspace()
     this._initResizeObserve()
-    this._initDring()
+    // this._initDring()
   }
 
   // 初始化背景
@@ -48,6 +43,29 @@ class EditorWorkspace {
     this.canvas.setHeight(this.workspaceEl.offsetHeight)
   }
 
+  // 插入图片文件
+  insertImgFile(src: string) {
+    if (!src) throw new Error('src is undefined')
+    const imgEl = document.createElement('img') as HTMLImageElement
+    imgEl.src = src
+    // 插入页面
+    document.body.appendChild(imgEl)
+    imgEl.onload = () => {
+      // 创建图片对象
+      const imgInstance = new fabric.Image(imgEl, {
+        id: uuid(),
+        name: '图片1',
+        left: 100,
+        top: 100
+      })
+      // 设置缩放
+      this.canvas.add(imgInstance)
+      this.canvas.setActiveObject(imgInstance)
+      this.canvas.renderAll()
+      // 删除页面中的图片元素
+      imgEl.remove()
+    }
+  }
   // 初始化画布
   _initWorkspace() {
     const { width, height } = this.option
@@ -65,6 +83,38 @@ class EditorWorkspace {
 
     this.workspace = workspace
     this.auto()
+  }
+
+  // 根据图片大小初始化画布
+  initBgImgWorkspace(BgImgSrc: string) {
+    fabric.Image.fromURL(BgImgSrc, (imgObj) => {
+      const { width, height } = imgObj
+      if (width !== undefined && height !== undefined) {
+        const pattern = new fabric.Pattern({
+          source: imgObj.getElement() as HTMLImageElement,
+          repeat: 'repeat'
+        })
+
+        const workspace = new fabric.Rect({
+          fill: pattern,
+          width,
+          height,
+          id: 'workspace'
+        })
+
+        workspace.set('selectable', false)
+        workspace.set('hasControls', false)
+        workspace.hoverCursor = 'default'
+        this.canvas.add(workspace)
+        this.canvas.renderAll()
+
+        this.workspace = workspace
+
+        this.auto()
+      } else {
+        throw new Error('BgImgSrc is error, plz check!')
+      }
+    })
   }
 
   /**

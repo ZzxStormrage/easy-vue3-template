@@ -1,15 +1,16 @@
+/*
+ * @Date: 2023-07-12 10:23:22
+ * @LastEditors: zzx 452436275@qq.com
+ * @LastEditTime: 2023-07-13 13:33:42
+ * @FilePath: /pc-img-editor/.eslintrc.cjs
+ */
 module.exports = {
   env: {
     browser: true,
     es2021: true,
     node: true
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:vue/vue3-essential',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended'
-  ],
+  extends: ['eslint:recommended', 'plugin:vue/vue3-essential', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -17,5 +18,23 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['vue', '@typescript-eslint'],
-  rules: {}
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-plusplus': 'off',
+    '@typescript-eslint/no-this-alias': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'import/no-unresolved': 'off',
+    'vuejs-accessibility/form-control-has-label': 'off',
+    'consistent-return': 'off', // 强制统一返回值
+    'no-param-reassign': 'off', // 参数重新分配
+    'no-underscore-dangle': 'off', // 使用下划线命名
+    'comma-spacing': 'off',
+    'vuejs-accessibility/click-events-have-key-events': 'off',
+    'max-len': 'off',
+    'no-unused-expressions': 'off', // 17
+    'linebreak-style': 'off',
+    'vue/multi-word-component-names': 'off', // 开启组件需要多单词
+    'vuejs-accessibility/anchor-has-content': 'off'
+  }
 }
