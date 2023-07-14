@@ -1,7 +1,7 @@
 <!--
  * @Date: 2023-07-13 18:47:08
  * @LastEditors: zzx 452436275@qq.com
- * @LastEditTime: 2023-07-14 19:35:43
+ * @LastEditTime: 2023-07-14 19:42:44
  * @FilePath: /pc-img-editor/src/components/tools.vue
 -->
 <template>
@@ -71,24 +71,33 @@ const addTextBox = (option) => {
 
   limitMovementWithinCanvas(text, markRect)
 
-  moveEvens(text, markRect, position)
+  // 计算文字相对于矩形的位置
+  let offset = {
+    left: text.left - markRect.left,
+    top: text.top - markRect.top
+  }
+  text.on('moving', function () {
+    // 更新文字相对于矩形的位置
+    offset = {
+      left: text.left - markRect.left,
+      top: text.top - markRect.top
+    }
+  })
+
+  moveEvens(text, markRect, offset)
 }
 
 // 文字随着框移动
-function moveEvens(text, markRect) {
-  console.log('🚀 ~ file: tools.vue:79 ~ moveEvens ~ text:', text)
+function moveEvens(text, markRect, offset) {
   // 文字相对 框的位置
-  // let pLeft = text.originalState.left
-  // markRect.on('moving', (opt) => {
-  //   markRect.setCoords()
-  //   text.setCoords()
-  //   let { top: cTop, left: cLeft, width: cWidth, height: cHeight } = markRect
-  //   console.log('🚀 ~ file: tools.vue:81 ~ moveEvens ~ pLeft:', pLeft)
-
-  //   text.left = cLeft + pLeft
-  //   // console.log('🚀 ~ file: tools.vue:90 ~ markRect.on ~ cLeft + mTop:', cLeft + mTop)
-  //   text.top = cTop + pTop
-  // })
+  markRect.on('moving', (opt) => {
+    // 更新文字的位置
+    text.set({
+      left: markRect.left + offset.left,
+      top: markRect.top + offset.top
+    })
+    canvas.c.renderAll()
+  })
 }
 
 function limitMovementWithinCanvas(movingBox, boundingBox) {
